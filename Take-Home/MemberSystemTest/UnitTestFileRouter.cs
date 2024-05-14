@@ -2,7 +2,9 @@ using MemberSystemSimulator.Tool;
 
 namespace MemberSystemTest
 {
-    [Collection ("UnitTestFileRouter")]
+    /// 每個測試會在各自的流程中操作檔案
+    /// 為了保證正確性要依序執行確保檔案獨立性
+    [Collection (nameof(DisableParallelizationCollection))]
     public class UnitTestFileRouter
     {
         [System.Serializable]
